@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+int factorial_by_value(int num)
+{
+    int result = 1;
+    for(int i = 1; i <= num; i++)
+    {
+        result *= i;
+    }
+    return result;
+}
+
+void factorial_by_reference(int &num)
+{
+    int result = 1;
+    for(int i = 1; i <=num; i++)
+    {
+        result *= i;
+    }
+    num = result;
+}
+
+int main()
+{
+    int num1 = 10;
+    int num2 = 25;
+
+    cout << "Before call by value for num1: " << num1 << endl;
+    int result1 = factorial_by_value(num1);
+    cout << "After call by value for num1: " << num1 << ", factorial = " << result1 << endl;
+
+    cout << "Before call by reference for num2: " << num2 << endl;
+    factorial_by_reference(num2);
+    cout << "After call by reference for num2: " << num2 << endl;
+
+    return 0;
+
+}
